@@ -1,4 +1,4 @@
-# FutureProofsTech
+# Future Proofs Tech
 # Cryptography Research & Systems Architecture
 
 Independent development and formal analysis of post-quantum cryptographic primitives and zero-knowledge proving systems. Focused on zero-dependency, constant-time, and adversarial-resilient implementations from first principles.
