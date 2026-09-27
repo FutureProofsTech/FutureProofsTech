@@ -19,11 +19,6 @@ Independent development and formal analysis of post-quantum cryptographic primit
 
 ---
 
-### Technical Publications
-* Preprints and technical reports are registered within the **IACR Cryptology ePrint Archive**.
-
----
-
 ### Project Support
 Contributions to support independent, self-funded cryptographic research are accepted at the following sovereign addresses:
 * **Ethereum (ETH / ERC-20):** `0xAE0ac3296f7b6DDc5921913DbdC5c80E119a1DC3`
