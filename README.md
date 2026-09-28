@@ -17,6 +17,11 @@ Independent development and formal analysis of post-quantum cryptographic primit
 * **Recursion:** Features a post-quantum, hash-folded Incrementally Verifiable Computation (IVC) mechanism.
 * **Security & Performance:** Formally hardened against proof malleability and transcript-poisoning vectors via strict domain separation. Validated through an adversarial test suite covering 970+ hostile vectors (FRI surgery, leaf/node confusion, fold tampering) with zero panics. Prover runtime measures ~6.4s for 2²⁰ rows on a 16-core CPU.
 
+#### 3. CA-PQ — Post-Quantum Hybrid KEM Framework
+* **CA-PQ** is a post-quantum cryptography framework that refuses the usual trade-offs. Instead of choosing between battle-tested classical ECDH and larger post-quantum KEMs, it combines both—plus a deterministic chaotic-stream layer—under a single transcript, in a single dependency-free Rust tree where every primitive is hand-written and every claim is tested.
+* **Two PQ profiles** (ML-KEM-768 at NIST level 3, ML-KEM-512 at level 1) feed two hybrid combiners alongside a hand-written X25519 leg.
+* **The result** on commodity hardware: ∼17k PQ encapsulations per second, ∼2.7k hybrid pairs per second, 828–1 148-byte ciphertexts, zero third-party code.
+
 ---
 
 ### Project Support
