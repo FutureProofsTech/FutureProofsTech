@@ -8,7 +8,7 @@ Independent development and formal analysis of post-quantum cryptographic primit
 ### Current Projects & Implementations
 
 #### 1. RMD-Q: Restricted Module Decoding with Quadratic Constraint
-* **Theoretical Grounding:** A novel post-quantum hardness assumption jointly coupling a noisy module-linear relation over \(R_q = \mathbb{Z}_q[X]/(X^n + 1)\) with a sparse multivariate-quadratic constraint P(s) = 0.
+* **Theoretical Grounding:** A novel post-quantum hardness assumption jointly coupling a noisy module-linear relation over Rq = Zq[X]/(X^n + 1) with a sparse multivariate-quadratic constraint P(s) = 0.
 * **Constructions:** Co-designed Fujisaki-Okamoto Key-Encapsulation Mechanism (KEM) and Fiat-Shamir signature scheme sharing a unified ring arithmetic core.
 * **Implementation & Verification:** Optimized constant-time C implementation (~3.9 KB core codebase) with proven Barrett reduction. Byte-for-byte validated against an independent Python reference. Verified clean under Valgrind and compiler sanitizers.
 
@@ -25,6 +25,14 @@ Independent development and formal analysis of post-quantum cryptographic primit
 #### 4. HypG — Complete Post-Quantum Cryptographic Suite in Safe Rust
 * **HypG** is a from-scratch post-quantum cryptographic suite written in 100% safe Rust with zero dependencies: a Module-LWE key-encapsulation mechanism, BLAKE3-based hashing, ChaCha20 / keyed-BLAKE3 authenticated encryption (one-shot and streaming), and state-less hash-based signatures.
 * **The suite** is a frozen research prototype (v1.0): every construction is implemented, deterministically tested, adversarially exercised, and fully gated in CI.
+
+#### 5. 0l0 — Lattice-Concise Post-Quantum Non-Interactive Zero-Knowledge Proofs
+
+- **Relation:** Zero-dependency proof of knowledge for a ternary witness over R_q = Z_q[X]/(X^64+1).
+- **Wire Size:** Fixed-by-type footprint of **4,577 Bytes**.
+- **Performance:** Sub-millisecond execution (Prover p50 = 184 μs, Verifier p50 = 80 μs).
+- **Hardening:** Validated via **49 million fuzz runs** and an exhaustive 36,616-bitflip red-team sweep (100% rejected).
+- **Assurance:** Strict no_std, zero-dependency safe Rust with a complete green Miri sweep.
 
 ---
 
