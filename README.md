@@ -26,13 +26,17 @@ Independent development and formal analysis of post-quantum cryptographic primit
 * **HypG** is a from-scratch post-quantum cryptographic suite written in 100% safe Rust with zero dependencies: a Module-LWE key-encapsulation mechanism, BLAKE3-based hashing, ChaCha20 / keyed-BLAKE3 authenticated encryption (one-shot and streaming), and state-less hash-based signatures.
 * **The suite** is a frozen research prototype (v1.0): every construction is implemented, deterministically tested, adversarially exercised, and fully gated in CI.
 
-#### 5. 0l0 — Lattice-Concise Post-Quantum Non-Interactive Zero-Knowledge Proofs
+#### 5. 0l0 — Post-Quantum Confidential Transfers on Lattice Proofs
 
-- **Relation:** Zero-dependency proof of knowledge for a ternary witness over R_q = Z_q[X]/(X^64+1).
-- **Wire Size:** Fixed-by-type footprint of **4,577 Bytes**.
-- **Performance:** Sub-millisecond execution (Prover p50 = 184 μs, Verifier p50 = 80 μs).
-- **Hardening:** Validated via **49 million fuzz runs** and an exhaustive 36,616-bitflip red-team sweep (100% rejected).
-- **Assurance:** Strict no_std, zero-dependency safe Rust with a complete green Miri sweep.
+| Relation | Proves | Proof size | Prove / verify (release, i5-14400F) |
+|---|---|---|---|
+| `R*` (v4) | Short preimage: `A·w = y`, ternary `w` | **3,545 B** | 282 µs / 123 µs (p50) |
+| `R_bin` (v4) | Binary witness: `A·b = y`, `b ∈ {0,1}` (range gadget) | **3,545 B** | same machinery |
+| `R_mixed` (v6) | Confidential note: value + note commitments, address link, nullifier, amount element | **9,401 B** in / **7,385 B** out | ~2.8 ms / 532 µs in, ~0.57 ms / 418 µs out |
+
+A reference 2-in-2-out private transfer is **≈ 34 KB** and verifies in
+**≈ 2 ms** (~500 transactions/second per validator core).
+
 
 ---
 
