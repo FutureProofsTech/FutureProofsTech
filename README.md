@@ -26,18 +26,6 @@ Independent development and formal analysis of post-quantum cryptographic primit
 * **HypG** is a from-scratch post-quantum cryptographic suite written in 100% safe Rust with zero dependencies: a Module-LWE key-encapsulation mechanism, BLAKE3-based hashing, ChaCha20 / keyed-BLAKE3 authenticated encryption (one-shot and streaming), and state-less hash-based signatures.
 * **The suite** is a frozen research prototype (v1.0): every construction is implemented, deterministically tested, adversarially exercised, and fully gated in CI.
 
-#### 5. 0l0 — Post-Quantum Confidential Transfers on Lattice Proofs
-**0l0** is a next-generation cryptographic system that enables **anonymous, secure, and quantum-resistant transactions**. Instead of speculative projections, it delivers a benchmarked, end-to-end architecture split into two core layers:
-* **`sq-pq`** – A post-quantum Zero-Knowledge (ZK) proof engine built over a Lyubashevsky core on polynomial rings.
-* **`sq-chain`** – A confidential statement layer handling notes, nullifiers, wallet transactions, and fail-closed validation.
-* **Ultra-Fast Verification**: Validating a full 2-in-2-out confidential transfer takes **only ≈ 2 ms**. This scales to **~500 TPS per core**, making it highly viable for production ledgers.
-* **Compact Proof Sizes**: Base ZK proofs (`R*` and `R_bin`) are optimized down to just **3,545 bytes**, minimizing blockchain bloat and storage requirements.
-* **Measured Data Only**: Every performance figure is directly measured on an Intel i5-14400F release build. There are **zero projections** or theoretical estimates here.
-* **Hardened Security**: 
-  * Full memory safety verified via Miri and backed by **over 9.3 million libFuzzer runs** with 0 crashes.
-  * Side-channel resilience ensured by a branchless core (asm-verified) and dudect harnesses.
-  * Mathematical correctness cross-verified with an independent Python model producing **byte-identical proofs**.
-
 ---
 
 ### Project Support
