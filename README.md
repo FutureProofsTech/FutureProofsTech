@@ -21,6 +21,9 @@ Independent development and formal analysis of post-quantum cryptographic primit
 * **HypG** is a from-scratch post-quantum cryptographic suite written in 100% safe Rust with zero dependencies: a Module-LWE key-encapsulation mechanism, BLAKE3-based hashing, ChaCha20 / keyed-BLAKE3 authenticated encryption (one-shot and streaming), and state-less hash-based signatures.
 * **The suite** is a frozen research prototype (v1.0): every construction is implemented, deterministically tested, adversarially exercised, and fully gated in CI.
 
+#### 4. SiCaS - Side-channel attenuation and leakage assessment
+* **SiCaS** helps engineers build and test software that is harder to attack by measuring the unintended power and electromagnetic signals a chip gives off while it runs, so weaknesses can be found before deployment. SiCaS is a safe Rust, zero runtime dependency workspace that combines first order Boolean-masked primitives and a masked ChaCha20 reference implementation with a leakage-assessment harness for TVLA, CPA, DPA, and timing analysis.
+
 ---
 
 ### Project Support
