@@ -24,6 +24,10 @@ Independent development and formal analysis of post-quantum cryptographic primit
 #### 4. SiCaS - Side-channel attenuation and leakage assessment
 * **SiCaS** helps engineers build and test software that is harder to attack by measuring the unintended power and electromagnetic signals a chip gives off while it runs, so weaknesses can be found before deployment. SiCaS is a safe Rust, zero runtime dependency workspace that combines first order Boolean-masked primitives and a masked ChaCha20 reference implementation with a leakage-assessment harness for TVLA, CPA, DPA, and timing analysis.
 
+#### 5. Sirus — Binary-Level x86-64 Code Virtualizer in Safe Rust
+- **Architecture:** Post-compilation binary virtualizer for ELF64 and PE32+ images. Lifts a strict subset of x86-64 into a typed IR, flattens control flow, expands arithmetic via MBA identities, and compiles into a per-build randomized encrypted ISA executed by a freestanding `no_std`, zero-dependency, 100% safe Rust VM.
+- **Hardening & Modes:** Enforces fail-closed binary translation, constant-time execution profiles, and an optional `unsafe` hardened boundary for anti-debug and self-integrity checks.
+
 ---
 
 ### Project Support
