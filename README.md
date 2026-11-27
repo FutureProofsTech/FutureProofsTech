@@ -7,7 +7,7 @@ Independent development and formal analysis of post-quantum cryptographic primit
 
 ### Current Projects & Implementations
 
-#### 1. Zero-Knowledge STARK & IVC Stack
+#### 1.z0p - Zero-Knowledge STARK & IVC Stack
 * **Architecture:** From-scratch, zero-dependency zero-knowledge proving stack implemented in 100% safe Rust. Utilizes binary tower fields, an NTT-friendly prime field, BLAKE3, and an arity-4 FRI polynomial commitment scheme.
 * **Recursion:** Features a post-quantum, hash-folded Incrementally Verifiable Computation (IVC) mechanism.
 * **Security & Performance:** Formally hardened against proof malleability and transcript-poisoning vectors via strict domain separation. Validated through an adversarial test suite covering 970+ hostile vectors (FRI surgery, leaf/node confusion, fold tampering) with zero panics. Prover runtime measures ~6.4s for 2²⁰ rows on a 16-core CPU.
