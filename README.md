@@ -28,6 +28,11 @@ Independent development and formal analysis of post-quantum cryptographic primit
 - **Architecture:** Post-compilation binary virtualizer for ELF64 and PE32+ images. Lifts a strict subset of x86-64 into a typed IR, flattens control flow, expands arithmetic via MBA identities, and compiles into a per-build randomized encrypted ISA executed by a freestanding `no_std`, zero-dependency, 100% safe Rust VM.
 - **Hardening & Modes:** Enforces fail-closed binary translation, constant-time execution profiles, and an optional `unsafe` hardened boundary for anti-debug and self-integrity checks.
 
+#### 6. qWp — Versioned Post-Quantum Hash-Based Signature Family in Safe Rust
+- **Architecture:** From-scratch, zero-dependency post-quantum hash-based signature toolkit implemented in 100% safe Rust (`#![forbid(unsafe_code)]`) with a `no_std` cryptographic core. Built on in-tree BLAKE3 (256-bit and 512-bit modes) and hand-written Ed25519/SHA-512 primitives with strict version separation across all wire formats.
+- **Profiles & Trade-offs:** Covers stateful WOTS/Merkle schemes (`QHS-1` through `QHS-3.1` with tree caching), stateless FORS/hypertree variants (`QHS-4` through `QHS-4.2` with parallel signing), a 512-bit-margin construction (`QHS-5`), an Ed25519 classical hybrid (`QHS-6`), and a verifier-only embedded profile (`QHS-E`) for constrained MCUs and bootloaders.
+- **Verification & Evidence:** Backed by an evidence-first verification suite including 308 release tests, 20 adversarial attack groups, exhaustive signature bit sweeps, Kani/Creusot/Frama-C formal checks, ~47M libFuzzer runs, constant-time validation (`dudect` max `|t| ≤ 1.07`), and multi-hour soak runs.
+
 ---
 
 ### Project Support
