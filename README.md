@@ -34,6 +34,12 @@ Independent development and formal analysis of post-quantum cryptographic primit
 - **Profiles & Trade-offs:** Covers stateful WOTS/Merkle schemes (`QHS-1` through `QHS-3.1` with tree caching), stateless FORS/hypertree variants (`QHS-4` through `QHS-4.2` with parallel signing), a 512-bit-margin construction (`QHS-5`), an Ed25519 classical hybrid (`QHS-6`), and a verifier-only embedded profile (`QHS-E`) for constrained MCUs and bootloaders.
 - **Verification & Evidence:** Backed by an evidence-first verification suite including 308 release tests, 20 adversarial attack groups, exhaustive signature bit sweeps, Kani/Creusot/Frama-C formal checks, ~47M libFuzzer runs, constant-time validation (`dudect` max `|t| ≤ 1.07`), and multi-hour soak runs.
 
+#### 7. [VORB3 — VOLEitH/QuickSilver Post-Quantum Signature Scheme](https://github.com/FutureProofsTech/VORB3)
+
+- **Architecture:** Compact, `no_std`, zero-dependency post-quantum signature library implemented in 100% safe Rust (`#![forbid(unsafe_code)]`) with no allocator. Combines a 15-round Rain-SP1 inversion permutation, GGM/Merkle vector commitments, QuickSilver batched multiplication proofs over 60 gates, and WH512 (64-byte wide BLAKE3).
+- **Profiles & Performance:** Targets three fixed-size profiles — **SP-288/35** (default, 13,672-byte signatures, ≈140-bit quantum / 256-bit classical floor), **NIST Level 1+** (7,976 B), and **NIST Level 3+** (10,296 B). Achieves sub-5 ms signing and verification on compact profiles while fitting within a 32 KiB internal stack budget.
+- **Verification & Evidence:** Cross-checked byte-for-byte against an independent Python reference model and frozen KATs, validated with 440M+ libFuzzer runs, mutation testing, Kani formal helper proofs, Miri, and constant-time checks (`dudect`). Accompanied by full academic white and yellow papers.
+
 ---
 
 ### Project Support
